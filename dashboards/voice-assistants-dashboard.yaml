@@ -1,0 +1,119 @@
+# Voice Assistants dashboard
+# Copyright (c) 2026 Aaron Morris / A2ThreeD.
+# Exported Home Assistant dashboard configuration.
+
+views:
+  - title: Voice activity
+    path: activity
+    icon: mdi:account-voice
+    type: sections
+    max_columns: 3
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading: Echo Dot
+            icon: mdi:speaker
+          - type: markdown
+            title: Latest activity
+            content: >-
+              **Wake word:** {{ states('sensor.echo_dot_last_wake_word') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_dot_last_wake_word.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+
+              **Wake score:** {{ states('sensor.echo_dot_last_wake_score') }}
+
+              **Heard:** {{ states('sensor.echo_dot_last_heard') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_dot_last_heard.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+
+              **Reply:** {{ states('sensor.echo_dot_last_reply') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_dot_last_reply.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+          - type: logbook
+            title: Recent changes · 7 days
+            hours_to_show: 168
+            target:
+              entity_id:
+                - sensor.echo_dot_last_wake_word
+                - sensor.echo_dot_last_wake_score
+                - sensor.echo_dot_last_heard
+                - sensor.echo_dot_last_reply
+      - type: grid
+        cards:
+          - type: heading
+            heading: Echo Show 5
+            icon: mdi:speaker
+          - type: markdown
+            title: Latest activity
+            content: >-
+              **Wake word:** {{ states('sensor.echo_show_5_last_wake_word') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_show_5_last_wake_word.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+
+              **Wake score:** {{ states('sensor.echo_show_5_last_wake_score') }}
+
+              **Heard:** {{ states('sensor.echo_show_5_last_heard') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_show_5_last_heard.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+
+              **Reply:** {{ states('sensor.echo_show_5_last_reply') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_show_5_last_reply.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+          - type: logbook
+            title: Recent changes · 7 days
+            hours_to_show: 168
+            target:
+              entity_id:
+                - sensor.echo_show_5_last_wake_word
+                - sensor.echo_show_5_last_wake_score
+                - sensor.echo_show_5_last_heard
+                - sensor.echo_show_5_last_reply
+      - type: grid
+        cards:
+          - type: heading
+            heading: Echo Show 8
+            icon: mdi:speaker
+          - type: markdown
+            title: Latest activity
+            content: >-
+              **Wake word:** {{ states('sensor.echo_show_8_last_wake_word') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_show_8_last_wake_word.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+
+              **Wake score:** {{ states('sensor.echo_show_8_last_wake_score') }}
+
+              **Heard:** {{ states('sensor.echo_show_8_last_heard') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_show_8_last_heard.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+
+              **Reply:** {{ states('sensor.echo_show_8_last_reply') }}
+
+              *Changed {{
+              as_local(states.sensor.echo_show_8_last_reply.last_changed).strftime('%b
+              %-d, %Y at %-I:%M %p') }}*
+          - type: logbook
+            title: Recent changes · 7 days
+            hours_to_show: 168
+            target:
+              entity_id:
+                - sensor.echo_show_8_last_wake_word
+                - sensor.echo_show_8_last_wake_score
+                - sensor.echo_show_8_last_heard
+                - sensor.echo_show_8_last_reply
